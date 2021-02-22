@@ -1,0 +1,210 @@
+/*--------Landscape Ipad*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header{
+        float: none;
+        width: 100%;
+    }
+    .content-left{
+        width: 42%;
+    }
+    .content-right{
+        width: 55%;
+    }
+    .box-content{
+        width: 680px;
+    }
+    h3{
+        font-size: 19px;
+    }
+    form{
+        padding: 19px 19px 31px 19px;
+    }
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    .header{
+        float: none;
+        width: 100%;
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 80%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .footer{
+        float: right;
+        width: 100%;
+        text-align: center;
+    }
+    h1, h2{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 410px) and (max-width: 479px){
+    .header{
+        float: none;
+        width: 100%;
+        
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .footer{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    h1, h2{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 409px){
+    .header{
+        float: none;
+        width: 100%;
+        
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .footer{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    h1, h2{
+        font-size: 17px;
+    }
+    h3{
+        font-size: 14px;
+    }
+}
+/*iphone X xoay dọc */
+@media only screen and (width: 375px) {
+    .header{
+        float: none;
+        width: 100%;
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    .footer{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    h1 ,h2{
+        font-size: 18px;
+    }
+
+}
+/*iphone 5 màn hình dọc*/
+@media only screen and (width: 320px){
+    .header{
+        float: none;
+        width: 100%;
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        height: 395px;
+    }
+    .footer{
+        float: none;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+    }
+    h1 ,h2{
+        font-size: 14px;
+    }
+    h3{
+        padding: 14px 46px 14px 46px;
+        font-size: 18px;
+
+    }
+
+}
+/*iphone 6+ -> 8+ màn hình dọc*/
+@media only screen and (width: 414px){
+    .header{
+        float: none;
+        width: 100%;
+    }
+    .content-left{
+        display: none;
+    }
+    .content-right{
+        float: none;
+        width: 100%;
+    }
+    .box-content{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        height: 551px;
+    }
+    .footer{
+        float: none;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+    }
+    h1 ,h2{
+        font-size: 19px;
+    }
+    h3{
+        padding: 24px 71px 15px 71px;
+        font-size: 19px;
+
+    }
+    form{
+        padding: 26px 20px 37px 20px;
+    }
+
+}
