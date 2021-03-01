@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
+        <title>Youtube</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header fixed-top" >
+            <div class="d-flex container-fluid">
+                <div class="d-flex header-info">
+                    <button class="btn openbtn" onclick="openNav()" id="collapse-sidebar-button">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="logo">
+                        <a href="../youtube_bootstrap/index.html">
+                            <img src="../youtube_bootstrap/img/youtube-new-logo-png-youtube-redesign-new-logo-dark-theme-and-user-interface-revealed-620.png" class="img-responsive" alt="Responsive image">
+                        </a>
+                    </div>
+                    <div class="d-flex search-form">
+                        <div class="search-box">
+                            <input type="text" id="search" placeholder="Search" >
+                        </div>
+                        <div class="search-button">
+                            <button type="button"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                              </svg></button>
+                        </div>
+                    </div>
+                    <div class="d-flex sub-menu">
+                        <div class="create-icon-dropdown">
+                            <button onclick="createDropFunction()" class="btn create-icon">
+                                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block;"><g class="style-scope yt-icon">
+                                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z" class="style-scope yt-icon"></path>
+                                </g></svg> 
+                            </button>
+                            <div id="myDropDown" class="create-dropdown-content">
+                                <a href="#"><i class="fa fa-upload"></i>Upload Video</a>
+                                <a href="#"><i class='fas fa-broadcast-tower'></i>Go Live</a>
+                              </div>
+                        </div>
+
+                        <button class="btn apps-icon">
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block;"><g class="style-scope yt-icon">
+                                <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" class="style-scope yt-icon"></path>
+                            </g></svg>
+                        </button>
+                        <button class="btn notification-icon">
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block;"><g class="style-scope yt-icon">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" class="style-scope yt-icon"></path>
+                            </g></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side navigation -->
+        <div class="sidebar" id="mySidebar">
+            <button href="javascript:void(0)" class="btn closebtn" onclick="closeNav()">x</button>
+            <a href="#"><i class="fa fa-home"></i>Home</a>
+            <a href="#"><i class="fas fa-fire-alt"></i>Trending</a>
+            <a href="#"><i class="fa fa-address-book"></i>Subcription</a>
+            <a href="#"><i class="fas fa-caret-square-right"></i>Library</a>
+            <a href="#"><i class="fas fa-history"></i>History</a>
+            <a href="#"><i class="far fa-caret-square-right"></i>Your videos</a>
+            <a href="#"><i class="fas fa-thumbs-up"></i>Liked videos</a>
+        </div>
+        
+<!-- --------------     tất cả phần video nằm ở đây   ------------     -->
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="suggestion-menu">
+                        <div class="button-setup active"><button type="button" class="btn btn-primary"><a href="#">All recommendations</a></button></div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">K-pop</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Dance</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Chi Pu</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Showbiz</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Showbiz</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Từ chối nhẹ nhàng thôi</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Bích Phương</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Bích Phương</a></button>
+                        </div>
+                        <div class="button-setup">
+                            <button type="button" class="btn btn-primary"><a href="#">Bích Phương</a></button>
+                        </div>
+                    
+                </div>
+
+
+
+
+                <div class="video-menu">
+                    <h1>Recommended</h1>
+                    <div class="d-flex video-items">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news">
+                    <h2>Latest YouTube posts</h2>
+                    <div class="d-flex news-block-wrapper">
+                        <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="expand" type="button" class="btn" data-toggle="collapse" data-target="#show"><i class="fas fa-angle-down"></i></button>
+                    <div id="show" class="collapse">
+                        <div class="d-flex news-block-wrapper" id="collapse-video">
+                            <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-block">
+                            <div class="news-block-detail">
+                                <div class="header-news">
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">
+                                        <img class="channel-logo-news" src="../youtube_bootstrap/img/channel-logo.png" alt="Ẩm thực nhà rồng">
+                                    </a>
+                                    <a href="https://www.youtube.com/channel/UCYf-xXb_rDGDSp9yKm7r68g">Ẩm thực Cha Rồng • 16 hours ago</a>
+                                </div>
+                                <div class="d-flex body-news">
+                                    <div class="content-news">
+                                        <p>Cát Thy làm từ thiện</p>
+                                        <a href="https://youtu.be/3HP17u6-fnQ">https://youtu.be/3HP17u6-fnQ</a>
+                                    </div>
+                                    <div class="body-news-img">
+                                        <img src="../youtube_bootstrap/img/unnamed.jpg" alt="" width="116px">
+                                    </div>
+                                </div>
+                                <div class="toolbar-news">
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-thumbs-down"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-menu" id="videoTwo">
+                    <div class="d-flex video-items">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                                <iframe width="265" height="148" src="https://www.youtube.com/embed/HI2UOfzEm_s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="d-flex details">
+                                    <div class="details-img">
+                                        <a href="https://www.youtube.com/c/AMCTVVN">
+                                            <img src="https://yt3.ggpht.com/a-/AOh14Ggnv_hAOP_ya9HeIcZiXIBIVt8J23MwOTNQ3A=s68-c-k-c0x00ffffff-no-rj-mo" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="details-link">
+                                        <a href="https://www.youtube.com/watch?v=HI2UOfzEm_s">Ngôi Sao Khoai Tây| Huyền thoại thực tập sinh, vừa vào công ty đã đánh đàn chị</a><br>
+                                        <a href="https://www.youtube.com/c/AMCTVVN" class="link-channel">AMC TV</a>
+                                        <p>71K Views • 7 months ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function createDropFunction() {
+            document.getElementById("myDropDown").classList.toggle("show");
+        }
+
+// Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.create-icon')) {
+                var dropdowns = document.getElementsByClassName("create-dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        }
+                }
+            }
+        }
+        </script>
+           
+</html>
