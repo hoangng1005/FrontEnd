@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hệ thống đánh giá mức độ ứng dụng CNTT và phát triển ứng dụng điện tử</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/home-giaodien.css" rel="stylesheet">
+        <link href="css/home-responsive.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            $(document).ready(function(){
+              $("#dropbtn").click(function(){
+                $("#dropdown-content").toggleClass("show");
+              });
+            });
+            </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="header">
+                <img src="../home/img/logo.png" alt="" width="65px" height="65px">
+                <div id="header-name">
+                    <h1>Cục tin học hóa - Bộ thông tin & truyền thông</h1>
+                    <h2>Hệ thống đánh giá mức độ ứng dụng CNTT và phát triển ứng dụng điện tử</h2>
+                </div>
+            </div>
+            <div id="menu-wrapper">
+                <div id="menu">
+                    <!--<input type="checkbox" id="chk">
+                    <label for="chk" class="show-menu-btn">
+                        <i class="fa fa-bars"></i>
+                    </label>-->
+                    <div id="drop-down-bar">
+                        <ul id="drop-down-bar-main">
+                            <li><a href="#">Trang chủ</a></li>
+                            <li>
+                                <a href="#">Giới thiệu</a>
+                                <ul id="drop-down-bar-sub">
+                                    <li>
+                                        <a href="#">Giới thiệu 1</a>
+                                        <a href="#">Giới thiệu 2</a>
+                                        <a href="#">Giới thiệu 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Tin tức</a></li>
+                            <li><a href="#">Đợt đánh giá</a></li>
+                            <li><a href="#">Hỏi đáp</a></li>
+                        </ul>
+                        <!--<label for="chk" class="hide-menu-btn">
+                            <i class="fa fa-close"></i>
+                        </label>-->
+                    </div>
+                    <form id="searchBox">
+                        <div class="searchBox-main">
+                            <input type="text" name="searchBox" id="searchBox" placeholder="Từ khóa tìm kiếm..."><br>
+                        </div>
+                        <div class="search-button">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="content">
+                <div id="content-top">
+                    <div id="slide">
+                        <h3>Hệ thống đánh giá <br> mức độ ứng dụng CNTT <br> và phát triển chính phủ điện tử</h3>
+                    </div>
+                    <div id="sub-menu">
+                        <ul>
+                            <li style="padding: 35px 0 12px 23px"><a href="#">Tin tức - Sự kiện</a></li>
+                            <li style="padding: 12px 0 12px 23px"><a href="#">Văn bản pháp lý</a></li>
+                            <li style="padding: 12px 0 12px 23px"><a href="#">Bài học kinh nghiệm</a></li>
+                            <li style="padding: 12px 0 12px 23px"><a href="#">Thống kê báo cáo</a></li>
+                            <li style="padding: 12px 0 31px 23px; border-bottom: none;" ><a href="#">Tài liệu</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content-main">
+                    <div id="content-main-left">
+                        <div id="heading">
+                            <h4>Các đợt đánh giá đang thực hiện</h4>
+                            <div id="dropdown">
+                                <!--   <select id="dropbtn">Chọn cấp thực hiện <i class="fa fa-caret-down"></i></select>
+                                <div id="dropdown-content">
+                                    <a href="#">Cấp 1</a>
+                                    <a href="#">Cấp 2</a>
+                                    <a href="#">Cấp 3</a>
+                                </div>  -->
+                                <select name="level" id="dropdown-level">
+                                    <option value="level0">Chọn cấp thực hiện</option>
+                                    <option value="level2">Cấp 1</option>
+                                    <option value="level2">Cấp 2</option>
+                                    <option value="level3">Cấp 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="content-table">
+                            <table>
+                                <tr>
+                                    <th>Đợt</th>
+                                    <th>Cấp thực hiện</th>
+                                    <th>Bắt đầu</th>
+                                    <th>Kết thúc</th>
+                                    <th>Các bước</th>
+                                    <th>Mô tả</th>
+                                    <th>Hướng dẫn</th>
+                    
+                                </tr>
+                                <tr>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Bộ thông tin và truyền thông</td>
+                                    <td>1/11/2018</td>
+                                    <td>21/11/2018</td>
+                                    <td>B1: Đưa thông tin <br> B2: Đánh giá </td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Ứng dụng CNTT trong hoạt động của cơ quan nhà nước</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>1/11/2018</td>
+                                    <td>21/11/2018</td>
+                                    <td>B1: Đưa thông tin <br> B2: Đánh giá </td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                                <tr>
+                                    <td>Trang thông tin điện tử hoặc cổng thông tin điện tử</td>
+                                    <td>Sở thông tin truyền thông Hà Nội</td>
+                                    <td>15/12/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Đánh giá hạ tầng kỹ thuật CNTT</td>
+                                    <td>Xem chi tiết</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div id="page-number">
+                            <ul class="page-number">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">Trang cuối</a></li>
+                            </ul>
+                        </div>
+
+                        <div id="content-news">
+                            <h4>Tin tức</h4>
+                            <div id="content-news-heading">
+                            
+                                    <p><a href="#">Thừa Thiên Huế đứng nhất trong việc phát triển chính phủ điện tử câp tỉnh</a><br>(28/08/2019)</p>
+                                    <p><a href="#">Bộ Tài Chính đứng đầu tháng này</a><br>(28/08/2019)</p>
+                                    <p><a href="#">Cơ hội làm việc với Vingroup</a><br>(28/08/2019)</p>
+                                    <p><a href="#">Thủ tướng: Xây dựng từ những điều nhỏ nhất</a><br>(28/08/2019)</p>
+                                    <p><a href="#">Từ 2018, dự án CNTT phải có cấp phép đầu tư</a><br>(28/08/2019)</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content-main-right">
+                        <h5>Sự kiện nổi bật</h5>
+                        <div id="side-bar-news">
+                            <div id="side-bar-main-news">
+                                <img src="../home/img/Layer 115.png" alt="">
+                                <p><a href="#">Kiểm tra tình hình ứng dụng CNTT, xây dựng chính quyền điện tử tại Hưng Yên</a></p>
+                            </div>
+                            <div id="side-bar-sub-news">
+                                    <p><a href="#">Bộ thông tin và truyền thông ban hành phương pháp đánh giá mức ứng dụng CNTT của CBNV và báo cáo</a><br></p>
+                                    <p><a href="#">Bộ thông tin và truyền thông đối thoại với nhân dân về tình trạng nạn tin giả đang tràn lan và phương thức xử lý nhằm đưa vấn đề trước Quốc hội</a><br></p>
+                                    <p><a href="#">Bộ thông tin và truyền thông thông báo miễn phí cấp tên miền cho nhiều cơ quan doanh nghiệp</a><br>   </p>
+                                    <p><a href="#">Bộ thông tin và truyền thông kỉ niệm 40 năm thành lập Bộ</a><br></p>
+                            </div>
+                            <div id="side-bar-box">
+                                
+                                    <a id="opinion" class="button" alt="" href="#"><img src="../home/img/auction.png" alt=""> Xin ý kiến <br> dự thảo văn bản</a>
+                                    <a id="contact" class="button" href="#"><img src="../home/img/address book.png" alt=""> Danh bạ điện thoại</a>
+                                    <a id="services" class="button" href="#"><img src="../home/img/justice.png" alt=""> Dịch vụ công</a>
+                               
+                            </div>
+                        </div>
+                        <img src="../home/img/Layer 124.png" alt="">
+                        <div id="link-menu">
+                            <select name="link-website" id="link-website">
+                                <option value="web0">--Liên kết website--</option>
+                                <option value="https://www.mic.gov.vn/Pages/trangchu.aspx" style="text-transform: none;">Bộ thông tin và truyền thông</option>
+                                <option value="http://moc.gov.vn/vn/Pages/Trangchu.aspx" style="text-transform: none;">Bộ xây dựng</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="footer">
+                <div id="footer-content">
+                    <div id="footer-left">
+                        <p>Bộ Thổng tin và Truyền thông cục Tin học hóa <br> Trụ sở chính: Tầng 12, Tòa nhà cục tần số Vô tuyến điện,<br> số 115 Trần Duy Hưng, phường Trung Hòa, Quận Cầu Giấy, Hà Nội</p>
+                    </div>
+                    <div id="footer-right">
+                        <p><br> Tel: (84-4)353782001 <br> Fax: (84-4)3537534001 </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        
+
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
