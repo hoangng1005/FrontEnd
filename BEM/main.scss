@@ -1,0 +1,60 @@
+body, html{
+    margin: 0;
+    height: 100vh;
+}
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: azure;
+}
+
+.card{
+    padding: 0 5em;
+
+    &__img{
+        display: block;
+        height: 100px;
+        width: 100%;
+        background: #e0466b;
+    }
+    &__content{
+        background: white;
+        padding: 25px;
+    }
+    &__list{
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    &__item{
+        padding: .3em .5em;
+        margin-right: .5em;
+        background: rgb(235, 227, 227);
+        border-radius: .3em;
+        font-size: .85em;
+
+        &--active{
+            background: rgb(173, 170, 170);
+            font-weight: bold;
+        }
+    }
+    &__link{
+        background: rgb(12, 133, 12);
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: .5em;
+        display: inline-block;
+        margin-top: .5em;
+
+        &:hover{
+            background:rgb(8, 85, 8);
+        }
+    }
+
+
+    
+}
